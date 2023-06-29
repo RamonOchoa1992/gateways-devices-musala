@@ -5,7 +5,7 @@ Install Microsoft SQL Server Managment Studio
 Run the SQL script that is inside sql folder
 Create new role; user:ramon, password:rr1234**
 
-Open the Gateways-Devices-Musala folder with Visual Studio Code (VSC) and then,into the VSC'terminal,
+Open the Gateways-Devices-Musala folder with Visual Studio Code (VSC) and then,into the VSC terminal,
 Run cd server
 Run npm run dev
 Run cd ../

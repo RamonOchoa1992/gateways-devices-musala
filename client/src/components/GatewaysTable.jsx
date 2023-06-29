@@ -26,7 +26,6 @@ import { updatingMode } from '../features/hideGateway/hideGatewaySlice';
 import { useDeleteGatewayMutation, useGatewaysQuery } from '../features/api/apiSlice';
 import Loading from './Loading';
 import ModalAdd from './modalAdd';
-import DeleteForm from './DeleteForm';
 
 
 function createData(serialNumber, humanName, ipAddress) {
