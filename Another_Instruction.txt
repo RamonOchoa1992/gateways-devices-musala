@@ -1,0 +1,1 @@
+In the SQL Server, the server name is local
