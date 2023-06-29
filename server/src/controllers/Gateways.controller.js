@@ -131,17 +131,21 @@ export const updateGateway = async (req, res) => {
 
 export const deleteGateway = async (req, res) => {
     const { id } = req.params;
-    const idGat = +id;
 
     try {
         const pool = await getConnection();
         const result = await pool.request()
-            .input("idGat", sql.Int, idGat)
+            .input("idGat", sql.Int, id)
             .query("DELETE FROM Gateway where idGat = @idGat")
 
-        const isDeleted = result["rowsAffected"][0];
+        const result1 = await pool.request()
+            .input("idGat", sql.Int, id)
+            .query("DELETE FROM Peripheral where idGat = @idGat")
 
-        isDeleted
+        const isDeleted = result["rowsAffected"][0];
+        const isDeleted1 = result1["rowsAffected"][0];
+
+        isDeleted && isDeleted1
             ? res.send({
                 message: "Gateway Deleted!"
             })
